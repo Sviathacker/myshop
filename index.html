@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Онлайн-магазин</title>
+<style>
+  body {
+    margin: 0; font-family: Arial, sans-serif; background: #111;
+    color: #fff;
+  }
+  /* Сайдбар */
+  #sidebar {
+    position: fixed; top: 0; left: -280px;
+    width: 280px; height: 100%;
+    background: #222;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 3px 0 8px rgba(0,0,0,0.5);
+  }
+  #sidebar.active {
+    left: 0;
+  }
+  #sidebar ul {
+    list-style: none; padding: 0 0 20px 0;
+  }
+  #sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+  }
+  #sidebar ul li a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+  }
+  #sidebar ul li a:hover {
+    color: #fff;
+  }
+  /* Гамбургер меню */
+  #hamburger {
+    position: fixed; top: 15px; left: 15px;
+    width: 30px; height: 22px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  #hamburger div {
+    height: 4px;
+    background: #ffc107;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+  /* Главная страница */
+  #mainContent {
+    padding: 60px 20px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .main-title {
+    text-align: center;
+    font-size: 32px;
+    color: #ffc107;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .quote {
+    text-align: center;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .section-card {
+    background: #222;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 0 15px #ffc107aa;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+  .section-card:hover {
+    transform: scale(1.05);
+  }
+  .section-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .section-card h2 {
+    margin: 15px 0 10px;
+    color: #ffc107;
+    font-size: 22px;
+  }
+</style>
+</head>
+<body>
+<div id="hamburger"><div></div><div></div><div></div></div>
+<nav id="sidebar">
+  <ul>
+    <li><a href="#" data-section="home">Главная</a></li>
+    <li><a href="#" data-section="clothes">Одежда</a></li>
+    <li><a href="#" data-section="tech">Техника</a></li>
+    <li><a href="#" data-section="lifestyle">Лайфстайл</a></li>
+    <li><a href="mailto:youremail@example.com" target="_blank">Связь со мной</a></li>
+  </ul>
+</nav>
+<div id="mainContent">
+  <div class="main-title">Исследуй мир стильных покупок прямо сейчас!</div>
+  <div id="homeSection" class="sections">
+    <div class="section-card" data-section="clothes" tabindex="0" role="button" aria-pressed="false">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" alt="Одежда">
+      <h2>Одежда</h2>
+    </div>
+    <div class="section-card" data-section="tech" tabindex="0" role="button" aria-pressed="false">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Техника">
+      <h2>Техника</h2>
+    </div>
+    <div class="section-card" data-section="lifestyle" tabindex="0" role="button" aria-pressed="false">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Лайфстайл">
+      <h2>Лайфстайл</h2>
+    </div>
+  </div>
+  <div class="quote">«Пусть каждая покупка приближает тебя к мечте.»</div>
+</div>
+</body>
+</html>
