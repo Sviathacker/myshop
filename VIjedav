@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Магазин</title>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
+  #sidebar { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #222;
+    overflow-y: auto; transition: left 0.3s ease; padding-top: 60px; z-index: 1000; box-shadow: 3px 0 8px rgba(0,0,0,0.5); }
+  #sidebar.active { left: 0; }
+  #sidebar ul { list-style: none; padding: 0 0 20px 0; }
+  #sidebar ul li { padding: 15px 20px; border-bottom: 1px solid #333; }
+  #sidebar ul li a { color: #ffc107; text-decoration: none; font-weight: 600; display: block; }
+  #hamburger { position: fixed; top: 15px; left: 15px; width: 30px; height: 22px; cursor: pointer; z-index: 1100; }
+  #hamburger div { height: 4px; background: #ffc107; margin: 4px 0; border-radius: 2px; }
+  #mainContent { padding: 60px 20px 20px 20px; max-width: 1200px; margin: 0 auto; }
+  .main-title { text-align: center; font-size: 32px; color: #ffc107; margin-bottom: 30px; font-weight: bold; }
+  .quote { text-align: center; font-style: italic; color: #aaa; margin-top: 40px; font-size: 20px; font-weight: 600; }
+  .sections { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; }
+  .section-card { background: #222; border-radius: 10px; width: 280px; box-shadow: 0 0 15px #ffc107aa;
+    cursor: pointer; text-align: center; transition: transform 0.3s ease; }
+  .section-card:hover { transform: scale(1.05); }
+  .section-card img { width: 100%; border-top-left-radius: 10px; border-top-right-radius: 10px; height: 180px; object-fit: cover; }
+  .section-card h2 { margin: 15px 0 10px; color: #ffc107; font-size: 22px; }
+  .back-button { margin-top: 20px; display: inline-block; padding: 10px 20px; background: #ffc107;
+    color: #000; border-radius: 5px; text-decoration: none; font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="hamburger"><div></div><div></div><div></div></div>
+<nav id="sidebar">
+  <ul>
+    <li><a href="#" onclick="showSection('home')">Главная</a></li>
+    <li><a href="#" onclick="showSection('clothes')">Одежда</a></li>
+    <li><a href="#" onclick="showSection('tech')">Техника</a></li>
+    <li><a href="#" onclick="showSection('lifestyle')">Лайфстайл</a></li>
+    <li><a href="mailto:youremail@example.com" target="_blank">Связь со мной</a></li>
+  </ul>
+</nav>
+
+<div id="mainContent">
+  <div id="home">
+    <div class="main-title">Исследуй мир стильных покупок прямо сейчас!</div>
+    <div class="sections">
+      <div class="section-card" onclick="showSection('clothes')">
+        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80">
+        <h2>Одежда</h2>
+      </div>
+      <div class="section-card" onclick="showSection('tech')">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">
+        <h2>Техника</h2>
+      </div>
+      <div class="section-card" onclick="showSection('lifestyle')">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80">
+        <h2>Лайфстайл</h2>
+      </div>
+    </div>
+    <div class="quote">«Пусть каждая покупка приближает тебя к мечте.»</div>
+  </div>
+
+  <div id="clothes" style="display:none;">
+    <a href="#" class="back-button" onclick="showSection('home')">← Назад</a>
+    <h2>Одежда</h2>
+    
+    <div class="sections">
+      
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+1" alt="Одежда 1">
+        <h2>Одежда 1</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+2" alt="Одежда 2">
+        <h2>Одежда 2</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+3" alt="Одежда 3">
+        <h2>Одежда 3</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+4" alt="Одежда 4">
+        <h2>Одежда 4</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+5" alt="Одежда 5">
+        <h2>Одежда 5</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+6" alt="Одежда 6">
+        <h2>Одежда 6</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+7" alt="Одежда 7">
+        <h2>Одежда 7</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+8" alt="Одежда 8">
+        <h2>Одежда 8</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+9" alt="Одежда 9">
+        <h2>Одежда 9</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://aliexpress.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Одежда+10" alt="Одежда 10">
+        <h2>Одежда 10</h2>
+      </div>
+    </div>
+    
+  </div>
+  <div id="tech" style="display:none;">
+    <a href="#" class="back-button" onclick="showSection('home')">← Назад</a>
+    <h2>Техника</h2>
+    
+    <div class="sections">
+      
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+1" alt="Техника 1">
+        <h2>Техника 1</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+2" alt="Техника 2">
+        <h2>Техника 2</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+3" alt="Техника 3">
+        <h2>Техника 3</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+4" alt="Техника 4">
+        <h2>Техника 4</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+5" alt="Техника 5">
+        <h2>Техника 5</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+6" alt="Техника 6">
+        <h2>Техника 6</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+7" alt="Техника 7">
+        <h2>Техника 7</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+8" alt="Техника 8">
+        <h2>Техника 8</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+9" alt="Техника 9">
+        <h2>Техника 9</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Техника+10" alt="Техника 10">
+        <h2>Техника 10</h2>
+      </div>
+    </div>
+    
+  </div>
+  <div id="lifestyle" style="display:none;">
+    <a href="#" class="back-button" onclick="showSection('home')">← Назад</a>
+    <h2>Лайфстайл</h2>
+    
+    <div class="sections">
+      
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+1" alt="Лайфстайл 1">
+        <h2>Лайфстайл 1</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+2" alt="Лайфстайл 2">
+        <h2>Лайфстайл 2</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+3" alt="Лайфстайл 3">
+        <h2>Лайфстайл 3</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+4" alt="Лайфстайл 4">
+        <h2>Лайфстайл 4</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+5" alt="Лайфстайл 5">
+        <h2>Лайфстайл 5</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+6" alt="Лайфстайл 6">
+        <h2>Лайфстайл 6</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+7" alt="Лайфстайл 7">
+        <h2>Лайфстайл 7</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+8" alt="Лайфстайл 8">
+        <h2>Лайфстайл 8</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+9" alt="Лайфстайл 9">
+        <h2>Лайфстайл 9</h2>
+      </div>
+
+      <div class="section-card" onclick="window.open('https://amazon.com', '_blank')">
+        <img src="https://via.placeholder.com/300x180?text=Лайфстайл+10" alt="Лайфстайл 10">
+        <h2>Лайфстайл 10</h2>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+const sidebar = document.getElementById('sidebar');
+document.getElementById('hamburger').addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+function showSection(id) {
+  ['home','clothes','tech','lifestyle'].forEach(s => {
+    document.getElementById(s).style.display = s === id ? 'block' : 'none';
+  });
+  sidebar.classList.remove('active');
+}
+</script>
+</body>
+</html>
